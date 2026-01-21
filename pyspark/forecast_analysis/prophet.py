@@ -1,3 +1,14 @@
+#Install Dependencies
+!pip install prophet
+#!pip install databricks-sdk==0.12.0
+#!pip install mlflow
+#!pip install grpcio
+#!pip install grpcio-status
+#!pip install -U "pandas<2.0.0"
+dbutils.library.restartPython()
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
 import time
 from prophet import Prophet
 import logging
