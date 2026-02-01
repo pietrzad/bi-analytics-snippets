@@ -1,0 +1,18 @@
+-- works with slicers both used as a column in matrix or not
+-- in main table (just put column names of the table)
+-- if you have slicer fron other tables than main (main is the first one referenced after allselected(),
+-- then you have to pu columns that we base slicers on in allselected as well                                                  
+
+                                                   
+[Unique Rows MultiTables] =
+COUNTROWS(
+    DISTINCT(
+        SELECTCOLUMNS(
+            ALLSELECTED(Fact),
+            "A", Fact[A],
+            "B", Fact[B],
+            "X", RELATED(Dim1[X]),
+            "Y", RELATED(Dim2[Y])
+        )
+    )
+)
