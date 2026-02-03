@@ -4,7 +4,7 @@
 -- then you have to pu columns that we base slicers on in allselected as well                                                  
 
                                                    
-[Unique Rows MultiTables] =
+m_row_counter =
 COUNTROWS(
     DISTINCT(
         SELECTCOLUMNS(
