@@ -1,0 +1,3 @@
+-- Below measure create a space between texts if needed
+
+Text measure = "Any text" & REPT(UNICHAR(127), 17) & "Any text"
