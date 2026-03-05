@@ -1,0 +1,17 @@
+//Below DAX code creates a dynamic title to matrix or any other vis based on the param value and needed param measure (in case there are more than one measure per one prama value)
+
+title = 
+VAR SelectedParamValue =
+    SELECTEDVALUE(Parameter_table[Display name], "Selection")
+VAR SelectedParamMeasure =
+    SWITCH(
+        SelectedParamValue,
+        "Display name 1", [measure 1],
+        "Display name 2", [measure 2],
+        BLANK()
+    )
+RETURN
+"Some text "
+& SelectedParamValue
+& ": "
+& FORMAT(SelectedParamMeasure, "0.0%")
