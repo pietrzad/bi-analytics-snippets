@@ -1,3 +1,5 @@
+-- Changing values in columns using map instead of CASE or regex. Easy to scale up
+
 WITH MAPPING AS (
       SELECT
         MAP(
