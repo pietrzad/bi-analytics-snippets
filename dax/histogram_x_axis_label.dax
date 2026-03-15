@@ -1,0 +1,10 @@
+-- Create histogram bins range labels for x axis
+-- Create calculated column based on below code
+
+histogram_x_axis_bin_range = 
+VAR binSize = 50 -- bin span e.g. 0-49, 50-99 etc
+VAR val = 'table'[measure] -- this measure is based on value analyzed in histogram
+VAR lower = INT(val / binSize) * binSize
+VAR upper = lower + binSize - 1
+RETURN
+FORMAT(lower,"0") & "–" & FORMAT(upper,"0")
