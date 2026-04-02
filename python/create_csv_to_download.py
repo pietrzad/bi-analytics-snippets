@@ -1,3 +1,5 @@
+# Below code is for creting csv file directly in databricks dbfs as an output of databricks table
+
 df = spark.table("catalog.schema.table") -- table to dump to csv
 
 tmp_path = "dbfs:/FileStore/tmp_file_name"
