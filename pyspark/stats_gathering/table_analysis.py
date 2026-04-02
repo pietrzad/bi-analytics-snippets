@@ -1,3 +1,5 @@
+# Below code is for creating data profile in table
+
 from pyspark.sql.functions import col, count, countDistinct, min, max, when, lit
 from pyspark.sql import functions as F
  
