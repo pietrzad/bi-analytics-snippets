@@ -14,7 +14,7 @@ let
     //SQL text
     SqlText =
     "SELECT * FROM <catalog>.<schema>." & TableName & "
-     QUALIFY snapshot_date = MAX(snapshot_date) OVER () --extra code to get latest data using max snapshot date
+     QUALIFY snapshot_date = MAX(snapshot_date) OVER () //extra code to get latest data using max snapshot date
     ",
 
     Source = Value.NativeQuery(
