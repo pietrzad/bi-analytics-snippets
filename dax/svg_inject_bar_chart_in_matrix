@@ -1,0 +1,27 @@
+m_split_bar = 
+VAR Bucket = [m_bucket_shipments_pct]
+VAR Exact = [m_exact_shipments_pct]
+
+VAR SvgHeight = 16
+VAR BarHeight = 10
+VAR Y = (SvgHeight - BarHeight) / 2
+
+VAR SepWidth = 10
+VAR SepX = Bucket * 100 - (SepWidth / 2)
+
+VAR Svg =
+"<svg xmlns='http://www.w3.org/2000/svg' width='100' height='" & SvgHeight & "'>
+    
+    <!-- green (bucket) -->
+    <rect x='0' y='" & Y & "' width='" & Bucket * 100 & "' height='" & BarHeight & "' fill='#4CAF50'/>
+
+    <!-- separator -->
+    <rect x='" & SepX & "' y='" & Y & "' width='" & SepWidth & "' height='" & BarHeight & "' fill='white'/>
+
+    <!-- blue (exact) -->
+    <rect x='" & Bucket * 100 & "' y='" & Y & "' width='" & Exact * 100 & "' height='" & BarHeight & "' fill='#2196F3'/>
+
+</svg>"
+
+RETURN
+"data:image/svg+xml;utf8," & Svg
