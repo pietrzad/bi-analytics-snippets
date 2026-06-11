@@ -1,6 +1,6 @@
 m_split_bar = 
-VAR Bucket = [m_bucket_shipments_pct]
-VAR Exact = [m_exact_shipments_pct]
+VAR Bucket = [measure 1]
+VAR Exact = [measure 2]
 
 VAR SvgHeight = 16
 VAR BarHeight = 10
