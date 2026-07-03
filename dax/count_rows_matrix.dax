@@ -5,14 +5,16 @@
 
                                                    
 m_row_counter =
-COUNTROWS(
-    DISTINCT(
-        SELECTCOLUMNS(
-            ALLSELECTED(Fact),
-            "A", Fact[A],
-            "B", Fact[B],
-            "X", RELATED(Dim1[X]),
-            "Y", RELATED(Dim2[Y])
-        )
-    )
-)
+COALESCE(
+  COUNTROWS(
+      DISTINCT(
+          SELECTCOLUMNS(
+              ALLSELECTED(Fact),
+              "A", Fact[A],
+              "B", Fact[B],
+              "X", RELATED(Dim1[X]),
+              "Y", RELATED(Dim2[Y])
+          )
+      )
+  ),
+0)
