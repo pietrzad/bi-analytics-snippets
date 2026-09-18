@@ -1,0 +1,24 @@
+-- below code you can use to create measure and put it in the table/matrix in pbi - it will show all filters if any value is selected as filter + value/s
+
+Selected Filters = 
+IF (
+    ISFILTERED ( <table[column]> ),
+    VAR ___f = FILTERS ( <table[column]> )
+    VAR ___d = CONCATENATEX ( ___f, <table[column]>, ", " )
+    VAR ___x = "<column - can be descriptive, not exact column name> (" & ___d & ") "
+    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+)
+& IF (
+    ISFILTERED ( <table[column]> ),
+    VAR ___f = FILTERS ( <table[column]> )
+    VAR ___d = CONCATENATEX ( ___f, <table[column]>, ", " )
+    VAR ___x = "<column - can be descriptive, not exact column name> (" & ___d & ") "
+    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+)
+& IF ( 
+    ISFILTERED ( <table[column]> ), 
+    VAR ___f = FILTERS ( <table[column]> ) 
+    VAR ___d = CONCATENATEX ( ___f, <table[column]>, ", " )
+	VAR ___x = "<column - can be descriptive, not exact column name> (" & ___d & ") " 
+    RETURN ___x & UNICHAR(13) & UNICHAR(10)
+)
