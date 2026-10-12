@@ -1,6 +1,8 @@
+-- below code is used for creating custom graph, just put your measures in <measure 1> and <measure 2> and see the result
+
 m_split_bar = 
-VAR Bucket = [measure 1]
-VAR Exact = [measure 2]
+VAR Bucket = [<measure 1>]
+VAR Exact = [<measure 2>]
 
 VAR SvgHeight = 16
 VAR BarHeight = 10
